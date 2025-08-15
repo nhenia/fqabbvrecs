@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Orleans Enigmatic Eateries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        @keyframes-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        :root {
+            --color-background: #1a1a1d;
+            --color-surface: #2c2c34;
+            --color-text: #e0e0e0;
+            --color-heading: #ffffff;
+            --color-accent: #c4a75f; /* Gold/Brass */
+            --color-accent-dark: #a18648;
+            --font-heading: 'Crimson Text', serif;
+            --font-body: 'Work Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            margin: 0;
+            padding: 20px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                              url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"%3E%3Cpath fill="%23333" fill-opacity="0.4" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"%3E%3C/path%3E%3C/svg%3E');
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--color-heading);
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--color-surface);
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            border: none;
+            background: none;
+            color: var(--color-text);
+            transition: color 0.3s, border-bottom 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab.active {
+            color: var(--color-accent);
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .panels .panel {
+            display: none;
+        }
+
+        .panels .panel.active {
+            display: block;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--color-surface);
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 20px;
+            animation: fade-in 0.5s ease-out forwards;
+            opacity: 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 20px var(--color-accent-dark);
+        }
+
+        .card h2 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-heading);
+            margin-top: 0;
+        }
+
+        .card p {
+            line-height: 1.6;
+        }
+
+        .card a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .card a:hover {
+            color: var(--color-accent-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>New Orleans Enigmatic Eateries</h1>
+        </header>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="restaurants">Restaurants</button>
+            <button class="tab" data-tab="bars">Bars</button>
+            <button class="tab" data-tab="shops">Shops</button>
+        </div>
+
+        <div class="panels">
+            <div id="restaurants-panel" class="panel active">
+                <div class="card-container"></div>
+            </div>
+            <div id="bars-panel" class="panel">
+                <div class="card-container"></div>
+            </div>
+            <div id="shops-panel" class="panel">
+                <div class="card-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const businesses = [
+            { name: 'Palm & Pine', categories: ['restaurant', 'bar'], description: 'A vibrant New Orleans restaurant in the French Quarter, exploring the food and drink of Louisiana, the South, and South of That.', url: 'https://www.google.com/maps/search/?api=1&query=Palm+%26+Pine+New+Orleans' },
+            { name: 'Empanola', categories: ['restaurant'], description: 'Latin-inspired, Louisiana-influenced empanadas, including crawfish étouffée, Peruvian chicken and Bananas Foster.', url: 'https://www.google.com/maps/search/?api=1&query=Empanola+New+Orleans' },
+            { name: 'Muriel’s', categories: ['restaurant', 'bar'], description: 'Classic Creole cuisine in a historic French Quarter building, with a courtyard bar and a resident ghost.', url: 'https://www.google.com/maps/search/?api=1&query=Muriels+Jackson+Square+New+Orleans' },
+            { name: 'Apothecary/Vampire Cafe', categories: ['restaurant', 'bar', 'shop'], description: 'A unique cafe and shop with a vampire theme, serving cocktails, food, and selling gothic curiosities.', url: 'https://www.google.com/maps/search/?api=1&query=Vampire+Apothecary+New+Orleans' },
+            { name: 'MRB', categories: ['bar'], description: 'A casual French Quarter bar with a great courtyard, live music, and a huge selection of local beers.', url: 'https://www.google.com/maps/search/?api=1&query=MRB+New+Orleans' },
+            { name: 'Vieux Carre Pizza', categories: ['restaurant'], description: 'A go-to spot in the French Quarter for a late-night slice of pizza.', url: 'https://www.google.com/maps/search/?api=1&query=Vieux+Carre+Pizza+New+Orleans' },
+            { name: 'Fahey’s', categories: ['bar'], description: 'An Irish pub in the French Quarter with a friendly, local vibe.', url: 'https://www.google.com/maps/search/?api=1&query=Faheys+Irish+Pub+New+Orleans' },
+            { name: 'Santos', categories: ['bar'], description: 'A rock & roll bar and music venue on the edge of the French Quarter.', url: 'https://www.google.com/maps/search/?api=1&query=Santos+Bar+New+Orleans' },
+            { name: 'Golden Lantern', categories: ['bar'], description: 'A 24/7 gay bar in the French Quarter, known for its friendly atmosphere and strong drinks.', url: 'https://www.google.com/maps/search/?api=1&query=Golden+Lantern+New+Orleans' },
+            { name: 'Black Penny', categories: ['bar'], description: 'A cozy, no-frills dive bar in the French Quarter with a jukebox and cheap drinks.', url: 'https://www.google.com/maps/search/?api=1&query=Black+Penny+New+Orleans' },
+            { name: 'The Abbey', categories: ['bar'], description: 'A 24/7 dive bar in the French Quarter with a quirky, gothic vibe.', url: 'https://www.google.com/maps/search/?api=1&query=The+Abbey+on+Decatur+New+Orleans' },
+            { name: 'The Dungeon', categories: ['bar'], description: 'A multi-level heavy metal and goth bar with a unique, dungeon-like atmosphere.', url: 'https://www.google.com/maps/search/?api=1&query=The+Dungeon+New+Orleans' },
+            { name: 'Molly’s/Toulouse Dive', categories: ['bar'], description: 'A beloved French Quarter dive bar, known for its frozen Irish coffee.', url: 'https://www.google.com/maps/search/?api=1&query=Mollys+on+Toulouse+New+Orleans' },
+            { name: 'Dark Matter', categories: ['shop'], description: 'An oddities and artisan collective showcasing the strange and unusual, from taxidermy to Victorian memorial art.', url: 'https://www.google.com/maps/search/?api=1&query=Dark+Matter+Oddities+New+Orleans' },
+            { name: 'Hex', categories: ['shop'], description: 'A witchcraft shop offering spell candles, crystals, books, and psychic readings.', url: 'https://www.google.com/maps/search/?api=1&query=Hex+Old+New+Orleans' },
+            { name: 'Vice & Graft', categories: ['shop'], description: 'A curated vintage clothing and antique store in the heart of the French Quarter.', url: 'https://www.google.com/maps/search/?api=1&query=Vice+%26+Graft+New+Orleans' },
+            { name: 'Gimme', categories: ['shop'], description: 'A popular coffee shop known for its high-quality espresso drinks and friendly baristas.', url: 'https://www.google.com/maps/search/?api=1&query=Gimme+Coffee+New+Orleans' }
+        ];
+
+        function createCard(business) {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <h2>${business.name}</h2>
+                <p>${business.description}</p>
+                <a href="${business.url}" target="_blank">Find it on the map</a>
+            `;
+            return card;
+        }
+
+        function renderCards() {
+            const containers = {
+                restaurants: document.querySelector('#restaurants-panel .card-container'),
+                bars: document.querySelector('#bars-panel .card-container'),
+                shops: document.querySelector('#shops-panel .card-container')
+            };
+
+            // Clear existing cards
+            for (const container in containers) {
+                containers[container].innerHTML = '';
+            }
+
+            businesses.forEach((business, index) => {
+                const card = createCard(business);
+                card.style.animationDelay = `${index * 0.05}s`;
+
+                business.categories.forEach(category => {
+                    const containerId = `${category}s`;
+                    if (containers[containerId]) {
+                        containers[containerId].appendChild(card.cloneNode(true));
+                    }
+                });
+            });
+        }
+
+        const tabs = document.querySelectorAll('.tab');
+        const panels = document.querySelectorAll('.panel');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+
+                tab.classList.add('active');
+                const panelId = `${tab.dataset.tab}-panel`;
+                document.getElementById(panelId).classList.add('active');
+            });
+        });
+
+        renderCards();
+    </script>
+</body>
+</html>
