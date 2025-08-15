@@ -58,6 +58,7 @@
             --md-sys-color-inverse-surface: #2B3131;
             --md-sys-color-inverse-on-surface: #ECF2F1;
             --md-sys-color-inverse-primary: #80D5D5;
+
         }
 
         body {
@@ -69,6 +70,7 @@
         md-tabs {
             background-color: var(--md-sys-color-surface);
             --md-divider-color: var(--md-sys-color-surface-variant);
+
         }
 
         .panels {
@@ -95,6 +97,7 @@
         .animated-card {
             opacity: 0;
             animation: fade-in-up 0.5s ease-out forwards;
+
         }
 
         .card-header {
@@ -104,6 +107,7 @@
         .card-content {
             padding: 0 16px 16px;
         }
+
 
         .card-actions {
             padding: 8px 16px;
@@ -255,6 +259,7 @@
             card.style.animationDelay = `${cardRenderCount * 0.05}s`;
             cardRenderCount++;
 
+
             card.innerHTML = `
                 <div class="card-header">
                     <div class="md-typescale-title-large">${business.name}</div>
@@ -273,12 +278,14 @@
             // Clear existing cards
             for (const panelId in panels) {
                 panels[panelId].innerHTML = '';
+
                 const container = document.createElement('div');
                 container.className = 'card-container';
                 panels[panelId].appendChild(container);
             }
 
             cardRenderCount = 0;
+
             businesses.forEach(business => {
                 business.categories.forEach(category => {
                     const panelId = `${category}s-panel`;
@@ -307,5 +314,6 @@
         tabs.activeTabIndex = 0;
 
     </script>
+
 </body>
 </html>
