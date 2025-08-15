@@ -12,6 +12,7 @@
             from {
                 opacity: 0;
                 transform: translateY(10px);
+
             }
             to {
                 opacity: 1;
@@ -88,6 +89,7 @@
 
         .panels .panel.active {
             display: block;
+
         }
 
         .card-container {
@@ -131,6 +133,7 @@
 
         .card a:hover {
             color: var(--color-accent-dark);
+
         }
     </style>
 </head>
@@ -188,6 +191,7 @@
                 <h2>${business.name}</h2>
                 <p>${business.description}</p>
                 <a href="${business.url}" target="_blank">Find it on the map</a>
+
             `;
             return card;
         }
@@ -233,5 +237,6 @@
 
         renderCards();
     </script>
+
 </body>
 </html>
