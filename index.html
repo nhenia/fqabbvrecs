@@ -3,29 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FQ Businesses</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Curated Curiosities & Confidential Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-red: #4D0000;
+            --off-black: #1A1A1A;
+            --gold: #FFD700;
+            --text-color: #E0DED7;
+        }
+
+        body {
+            background-color: var(--off-black);
+            color: var(--text-color);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--dark-red);
+            padding-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: 'Macondo Swash Caps', serif;
+            font-size: 3.5rem;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
+        }
+
+        h2 {
+            font-family: 'Macondo Swash Caps', serif;
+            font-size: 2rem;
+            color: var(--dark-red);
+            margin-top: 2rem;
+            border-bottom: 1px solid var(--dark-red);
+            padding-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--gold);
+        }
+
+        .business-list a {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>//FQ</h1>
+
+    <header>
+        <h1>Nocturne Enterprises</h1>
+        <p>Curated Curiosities & Confidential Services</p>
+    </header>
+
+    <div class="business-list">
+        <h2>Food</h2>
         <ul>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=MRB+New+Orleans" target="_blank">MRB</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Vice+%26+GRAFT+New+Orleans" target="_blank">Vice & GRAFT</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Santos+Bar+New+Orleans" target="_blank">Santos</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=The+Abbey+on+Decatur+New+Orleans" target="_blank">The Abbey</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=The+Dungeon+New+Orleans" target="_blank">The Dungeon</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Mollys+Toulouse+Dive+New+Orleans" target="_blank">Molly's/Toulouse Dive</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Dark+Matter+New+Orleans" target="_blank">Dark Matter</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Hex+New+Orleans" target="_blank">Hex</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Gimme+Coffee+New+Orleans" target="_blank">Gimme</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Muriels+Jackson+Square+New+Orleans" target="_blank">Muriel's</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Golden+Lantern+New+Orleans" target="_blank">Golden Lantern</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Vampire+Apothecary+New+Orleans" target="_blank">Apothecary/Vampire Cafe</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Black+Penny+New+Orleans" target="_blank">Black Penny</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Palm+%26+Pine+New+Orleans" target="_blank">Palm & Pine</a></li>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Vieux+Carre+Pizza+New+Orleans" target="_blank">Vieux Carre Pizza</a></li>
+            <li><a href="https://www.google.com/maps/place/Palm+%26+Pine/" target="_blank">Palm & Pine</a></li>
+            <li><a href="https://www.google.com/maps/place/Empanola/" target="_blank">Empanola</a></li>
+            <li><a href="https://www.google.com/maps/place/Muriel's+Jackson+Square/" target="_blank">Muriel’s</a></li>
+            <li><a href="https://www.google.com/maps/place/Vampire+Cafe+New+Orleans/" target="_blank">Apothecary/Vampire Cafe</a></li>
+            <li><a href="https://www.google.com/maps/place/MRB+Bar+%26+Kitchen/" target="_blank">MRB Bar & Kitchen</a></li>
+            <li><a href="https://www.google.com/maps/place/Vieux+Carre+Pizza/" target="_blank">Vieux Carre Pizza</a></li>
+        </ul>
+
+        <h2>Drink</h2>
+        <ul>
+            <li><a href="https://www.google.com/maps/place/Fahy's+Irish+Pub/" target="_blank">Fahey’s</a></li>
+            <li><a href="https://www.google.com/maps/place/Santos+Bar/" target="_blank">Santos</a></li>
+            <li><a href="https://www.google.com/maps/place/Golden+Lantern/" target="_blank">Golden Lantern</a></li>
+            <li><a href="https://www.google.com/maps/place/Black+Penny/" target="_blank">Black Penny</a></li>
+            <li><a href="https://www.google.com/maps/place/The+Abbey/" target="_blank">The Abbey</a></li>
+            <li><a href="https://www.google.com/maps/place/The+Dungeon/" target="_blank">The Dungeon</a></li>
+            <li><a href="https://www.google.com/maps/place/Molly's+at+the+Market/" target="_blank">Molly’s at the Market</a></li>
+            <li><a href="https://www.google.com/maps/place/Toulouse+Dive+Bar/" target="_blank">Toulouse Dive</a></li>
+            <li><a href="https://www.google.com/maps/place/Dark+Matter+New+Orleans/" target="_blank">Dark Matter</a></li>
+            <li><a href="https://www.google.com/maps/place/Hex+New+Orleans/" target="_blank">Hex</a></li>
+            <li><a href="https://www.google.com/maps/place/Gimme+New+Orleans/" target="_blank">Gimme</a></li>
+        </ul>
+        
+        <h2>Shops</h2>
+        <ul>
+            <li><a href="https://www.google.com/maps/place/Vice+%26+Graft/" target="_blank">Vice & Graft</a></li>
         </ul>
     </div>
+
 </body>
 </html>
