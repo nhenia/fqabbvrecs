@@ -3,114 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curated Curiosities & Confidential Services</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>New Orleans Business Directory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+        {
+            "imports": {
+                "@material/web/": "https://esm.run/@material/web/"
+            }
+        }
+    </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
     <style>
-        :root {
-            --dark-red: #4D0000;
-            --off-black: #1A1A1A;
-            --gold: #FFD700;
-            --text-color: #E0DED7;
-        }
-
         body {
-            background-color: var(--off-black);
-            color: var(--text-color);
             font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 2rem;
-            line-height: 1.6;
+            background-color: #f5f5f5;
         }
-
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-            border-bottom: 2px solid var(--dark-red);
-            padding-bottom: 1rem;
+        md-tabs {
+            background-color: #fff;
+            --md-primary-tab-active-indicator-color: #6200ee;
+            --md-primary-tab-active-label-text-color: #6200ee;
         }
-
-        h1 {
-            font-family: 'Macondo Swash Caps', serif;
-            font-size: 3.5rem;
-            color: var(--gold);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin: 0;
+        .panels {
+            padding: 20px;
         }
-
-        h2 {
-            font-family: 'Macondo Swash Caps', serif;
-            font-size: 2rem;
-            color: var(--dark-red);
-            margin-top: 2rem;
-            border-bottom: 1px solid var(--dark-red);
-            padding-bottom: 0.5rem;
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
         }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
+        md-card {
+            width: 300px;
+            --md-elevated-card-container-color: #fff;
         }
-
-        li {
-            margin-bottom: 0.5rem;
+        .card-header {
+            padding: 16px;
         }
-
-        a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
+        .card-content {
+            padding: 0 16px 16px;
         }
-
-        a:hover {
-            color: var(--gold);
-        }
-
-        .business-list a {
-            font-size: 1.2rem;
-            font-weight: bold;
+        .card-actions {
+            padding: 8px 16px;
+            display: flex;
+            justify-content: flex-end;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Nocturne Enterprises</h1>
-        <p>Curated Curiosities & Confidential Services</p>
-    </header>
+    <md-tabs aria-label="Business Categories">
+        <md-primary-tab id="restaurants-tab" aria-controls="restaurants-panel">
+            <md-icon slot="icon">restaurant</md-icon>
+            Restaurants
+        </md-primary-tab>
+        <md-primary-tab id="bars-tab" aria-controls="bars-panel">
+            <md-icon slot="icon">local_bar</md-icon>
+            Bars
+        </md-primary-tab>
+        <md-primary-tab id="shops-tab" aria-controls="shops-panel">
+            <md-icon slot="icon">storefront</md-icon>
+            Shops
+        </md-primary-tab>
+    </md-tabs>
 
-    <div class="business-list">
-        <h2>Food</h2>
-        <ul>
-            <li><a href="https://maps.app.goo.gl/yYvS4WbV6H7H2Y1y7" target="_blank">Palm & Pine</a></li>
-            <li><a href="https://maps.app.goo.gl/kXvB2Jv3H6X7Y5d2H" target="_blank">Empanola</a></li>
-            <li><a href="https://maps.app.goo.gl/nN4K4WbV6H7H2Y1y8" target="_blank">Muriel’s</a></li>
-            <li><a href="https://maps.app.goo.gl/pM7V4Jv3H6X7Y5d2K" target="_blank">Apothecary/Vampire Cafe</a></li>
-            <li><a href="https://maps.app.goo.gl/eG8L4WbV6H7H2Y1y9" target="_blank">MRB Bar & Kitchen</a></li>
-            <li><a href="https://maps.app.goo.gl/xY9B4Jv3H6X7Y5d2M" target="_blank">Vieux Carre Pizza</a></li>
-        </ul>
-
-        <h2>Drink</h2>
-        <ul>
-            <li><a href="https://maps.app.goo.gl/sD2Y4WbV6H7H2Y1yA" target="_blank">Fahey’s</a></li>
-            <li><a href="https://maps.app.goo.gl/eG7L4WbV6H7H2Y1yB" target="_blank">Santos</a></li>
-            <li><a href="https://maps.app.goo.gl/uR6K4Jv3H6X7Y5d2N" target="_blank">Golden Lantern</a></li>
-            <li><a href="https://maps.app.goo.gl/aC9B4WbV6H7H2Y1yC" target="_blank">Black Penny</a></li>
-            <li><a href="https://maps.app.goo.gl/oT2L4Jv3H6X7Y5d2P" target="_blank">The Abbey</a></li>
-            <li><a href="https://maps.app.goo.gl/jN4V4WbV6H7H2Y1yD" target="_blank">The Dungeon</a></li>
-            <li><a href="https://maps.app.goo.gl/iP7V4Jv3H6X7Y5d2Q" target="_blank">Molly’s at the Market</a></li>
-            <li><a href="https://maps.app.goo.gl/lG9B4WbV6H7H2Y1yE" target="_blank">Toulouse Dive</a></li>
-            <li><a href="https://maps.app.goo.gl/qD3K4Jv3H6X7Y5d2R" target="_blank">Dark Matter</a></li>
-            <li><a href="https://maps.app.goo.gl/wY8V4WbV6H7H2Y1yF" target="_blank">Hex</a></li>
-            <li><a href="https://maps.app.goo.gl/bM6B4Jv3H6X7Y5d2S" target="_blank">Gimme</a></li>
-        </ul>
-        
-        <h2>Shops</h2>
-        <ul>
-            <li><a href="https://maps.app.goo.gl/mP9B4WbV6H7H2Y1yG" target="_blank">Vice & Graft</a></li>
-        </ul>
+    <div class="panels">
+        <div id="restaurants-panel" role="tabpanel" aria-labelledby="restaurants-tab"></div>
+        <div id="bars-panel" role="tabpanel" aria-labelledby="bars-tab" hidden></div>
+        <div id="shops-panel" role="tabpanel" aria-labelledby="shops-tab" hidden></div>
     </div>
+
+    <script type="module">
+        const businesses = [
+            {
+                name: 'Palm & Pine',
+                categories: ['restaurant', 'bar'],
+                description: 'A vibrant New Orleans restaurant in the French Quarter, exploring the food and drink of Louisiana, the South, and South of That.',
+                url: 'https://www.google.com/maps/search/?api=1&query=Palm+%26+Pine+New+Orleans'
+            },
+            {
+                name: 'Empanola',
+                categories: ['restaurant'],
+                description: 'Latin-inspired, Louisiana-influenced empanadas, including crawfish étouffée, Peruvian chicken and Bananas Foster.',
+                url: 'https://www.google.com/maps/search/?api=1&query=Empanola+New+Orleans'
+            },
+            {
+                name: 'Muriel’s',
+                categories: ['restaurant', 'bar'],
+                description: 'Classic Creole cuisine in a historic French Quarter building, with a courtyard bar and a resident ghost.',
+                url: 'https://www.google.com/maps/search/?api=1&query=Muriels+Jackson+Square+New+Orleans'
+            },
+            {
+                name: 'Apothecary/Vampire Cafe',
+                categories: ['restaurant', 'bar', 'shop'],
+                description: 'A unique cafe and shop with a vampire theme, serving cocktails, food, and selling gothic curiosities.',
+                url: 'https://www.google.com/maps/search/?api=1&query=Vampire+Apothecary+New+Orleans'
+            },
+            {
+                name: 'MRB',
+                categories: ['bar'],
+                description: 'A casual French Quarter bar with a great courtyard, live music, and a huge selection of local beers.',
+                url: 'https://www.google.com/maps/search/?api=1&query=MRB+New+Orleans'
+            },
+            {
+                name: 'Vieux Carre Pizza',
+                categories: ['restaurant'],
+                description: 'A go-to spot in the French Quarter for a late-night slice of pizza.',
+                url: 'https://www.google.com/maps/search/?api=1&query=Vieux+Carre+Pizza+New+Orleans'
+            },
+            {
+                name: 'Fahey’s',
+                categories: ['bar'],
+                description: 'An Irish pub in the French Quarter with a friendly, local vibe.',
+                url: 'https://www.google.com/maps/search/?api=1&query=Faheys+Irish+Pub+New+Orleans'
+            },
+            {
+                name: 'Santos',
+                categories: ['bar'],
+                description: 'A rock & roll bar and music venue on the edge of the French Quarter.',
+                url: 'https://www.google.com/maps/search/?api=1&query=Santos+Bar+New+Orleans'
+            },
+            {
+                name: 'Golden Lantern',
+                categories: ['bar'],
+                description: 'A 24/7 gay bar in the French Quarter, known for its friendly atmosphere and strong drinks.',
+                url: 'https://www.google.com/maps/search/?api=1&query=Golden+Lantern+New+Orleans'
+            },
+            {
+                name: 'Black Penny',
+                categories: ['bar'],
+                description: 'A cozy, no-frills dive bar in the French Quarter with a jukebox and cheap drinks.',
+                url: 'https://www.google.com/maps/search/?api=1&query=Black+Penny+New+Orleans'
+            },
+            {
+                name: 'The Abbey',
+                categories: ['bar'],
+                description: 'A 24/7 dive bar in the French Quarter with a quirky, gothic vibe.',
+                url: 'https://www.google.com/maps/search/?api=1&query=The+Abbey+on+Decatur+New+Orleans'
+            },
+            {
+                name: 'The Dungeon',
+                categories: ['bar'],
+                description: 'A multi-level heavy metal and goth bar with a unique, dungeon-like atmosphere.',
+                url: 'https://www.google.com/maps/search/?api=1&query=The+Dungeon+New+Orleans'
+            },
+            {
+                name: 'Molly’s/Toulouse Dive',
+                categories: ['bar'],
+                description: 'A beloved French Quarter dive bar, known for its frozen Irish coffee.',
+                url: 'https://www.google.com/maps/search/?api=1&query=Mollys+on+Toulouse+New+Orleans'
+            },
+            {
+                name: 'Dark Matter',
+                categories: ['shop'],
+                description: 'An oddities and artisan collective showcasing the strange and unusual, from taxidermy to Victorian memorial art.',
+                url: 'https://www.google.com/maps/search/?api=1&query=Dark+Matter+Oddities+New+Orleans'
+            },
+            {
+                name: 'Hex',
+                categories: ['shop'],
+                description: 'A witchcraft shop offering spell candles, crystals, books, and psychic readings.',
+                url: 'https://www.google.com/maps/search/?api=1&query=Hex+Old+New+Orleans'
+            },
+            {
+                name: 'Vice & Graft',
+                categories: ['shop'],
+                description: 'A curated vintage clothing and antique store in the heart of the French Quarter.',
+                url: 'https://www.google.com/maps/search/?api=1&query=Vice+%26+Graft+New+Orleans'
+            },
+            {
+                name: 'Gimme',
+                categories: ['shop'],
+                description: 'A popular coffee shop known for its high-quality espresso drinks and friendly baristas.',
+                url: 'https://www.google.com/maps/search/?api=1&query=Gimme+Coffee+New+Orleans'
+            }
+        ];
+
+        const panels = {
+            'restaurants-panel': document.getElementById('restaurants-panel'),
+            'bars-panel': document.getElementById('bars-panel'),
+            'shops-panel': document.getElementById('shops-panel')
+        };
+
+        function createCard(business) {
+            const card = document.createElement('md-elevated-card');
+            card.innerHTML = `
+                <div class="card-header">
+                    <div class="md-typescale-title-large">${business.name}</div>
+                </div>
+                <div class="card-content">
+                    <p class="md-typescale-body-medium">${business.description}</p>
+                </div>
+                <div class="card-actions">
+                    <md-text-button onclick="window.open('${business.url}', '_blank')">View on Map</md-text-button>
+                </div>
+            `;
+            return card;
+        }
+
+        function renderCards() {
+            for (const panelId in panels) {
+                const container = document.createElement('div');
+                container.className = 'card-container';
+                panels[panelId].appendChild(container);
+            }
+
+            businesses.forEach(business => {
+                business.categories.forEach(category => {
+                    const panelId = `${category}s-panel`;
+                    if (panels[panelId]) {
+                        const card = createCard(business);
+                        panels[panelId].querySelector('.card-container').appendChild(card);
+                    }
+                });
+            });
+        }
+
+        const tabs = document.querySelector('md-tabs');
+        tabs.addEventListener('change', () => {
+            const selectedTab = tabs.activeTab;
+            const controlledPanelId = selectedTab.getAttribute('aria-controls');
+
+            for (const panelId in panels) {
+                panels[panelId].hidden = (panelId !== controlledPanelId);
+            }
+        });
+
+        // Initially render cards and set the first tab as active
+        renderCards();
+        panels['bars-panel'].hidden = true;
+        panels['shops-panel'].hidden = true;
+        tabs.activeTabIndex = 0;
+
+    </script>
 
 </body>
 </html>
